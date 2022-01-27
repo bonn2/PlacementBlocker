@@ -25,15 +25,35 @@ public class Events implements Listener {
         if (event.getPlayer().hasPermission("placementblocker.bypass")) return;
         if (bannedItems.contains(event.getBlock().getType())) {
             event.setCancelled(true);
-            event.getPlayer().sendMessage(Component
-                    .text("To optimise the FPS for all players you cannot place a ")
-                    .color(TextColor.color(16733525))
-                    .append(Component.selector(String.valueOf(event.getBlock().getType()))
-                            .color(TextColor.color(16755200))
-                            .append(Component.text(" here!")
-                                    .color(TextColor.color(16733525)))));
+            boolean isConsonant = true;
+            switch (event.getBlock().getType().toString().charAt(0)) {
+                case 'A':
+                case 'E':
+                case 'I':
+                case 'O':
+                case 'U': isConsonant = false;
+            }
+            if (isConsonant) {
+                event.getPlayer().sendMessage(Component
+                        .text("To optimise the FPS for all players you cannot place a ")
+                        .color(TextColor.color(16733525))
+                        .append(Component.selector(String.valueOf(event.getBlock().getType()))
+                                .color(TextColor.color(16755200))
+                                .append(Component.text(" here!")
+                                        .color(TextColor.color(16733525)))));
+            }
+            else {
+                event.getPlayer().sendMessage(Component
+                        .text("To optimise the FPS for all players you cannot place an ")
+                        .color(TextColor.color(16733525))
+                        .append(Component.selector(String.valueOf(event.getBlock().getType()))
+                                .color(TextColor.color(16755200))
+                                .append(Component.text(" here!")
+                                        .color(TextColor.color(16733525)))));
+            }
         }
     }
+
 
     List<Material> otherbannedItems = Arrays.asList(Material.ITEM_FRAME, Material.GLOW_ITEM_FRAME, Material.ARMOR_STAND, Material.DRAGON_HEAD, Material.PLAYER_HEAD, Material.ZOMBIE_HEAD, Material.CREEPER_HEAD, Material.SKELETON_SKULL, Material.WITHER_SKELETON_SKULL, Material.MINECART, Material.OAK_BOAT, Material.CHEST_MINECART, Material.FURNACE_MINECART, Material.TNT_MINECART, Material.HOPPER_MINECART, Material.SPRUCE_BOAT, Material.BIRCH_BOAT, Material.JUNGLE_BOAT, Material.ACACIA_BOAT, Material.DARK_OAK_BOAT, Material.END_CRYSTAL, Material.FLINT_AND_STEEL);
 
@@ -45,13 +65,32 @@ public class Events implements Listener {
         if (event.getPlayer().hasPermission("placementblocker.bypass")) return;
         if (otherbannedItems.contains(Objects.requireNonNull(event.getItem()).getType())){
             event.setCancelled(true);
-            event.getPlayer().sendMessage(Component
-                    .text("To optimise the FPS for all players you cannot place a ")
-                    .color(TextColor.color(16733525))
-                    .append(Component.selector(String.valueOf(event.getMaterial()))
-                            .color(TextColor.color(16755200))
-                            .append(Component.text(" here!")
-                                    .color(TextColor.color(16733525)))));
+            boolean isConsonant = true;
+            switch (event.getItem().getType().toString().charAt(0)) {
+                case 'A':
+                case 'E':
+                case 'I':
+                case 'O':
+                case 'U': isConsonant = false;
+            }
+            if (isConsonant) {
+                event.getPlayer().sendMessage(Component
+                        .text("To optimise the FPS for all players you cannot place a ")
+                        .color(TextColor.color(16733525))
+                        .append(Component.selector(String.valueOf(event.getMaterial()))
+                                .color(TextColor.color(16755200))
+                                .append(Component.text(" here!")
+                                        .color(TextColor.color(16733525)))));
+            }
+            else {
+                event.getPlayer().sendMessage(Component
+                        .text("To optimise the FPS for all players you cannot place an ")
+                        .color(TextColor.color(16733525))
+                        .append(Component.selector(String.valueOf(event.getItem().getType()))
+                                .color(TextColor.color(16755200))
+                                .append(Component.text(" here!")
+                                        .color(TextColor.color(16733525)))));
+            }
         }
     }
 }
