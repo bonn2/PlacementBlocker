@@ -1,0 +1,4 @@
+name: PlacementBlocker
+version: '${project.version}'
+main: com.lemonjoey.placementblocker.Main
+api-version: 1.18
