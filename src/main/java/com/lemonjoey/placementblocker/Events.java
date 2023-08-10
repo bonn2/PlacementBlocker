@@ -55,7 +55,7 @@ public class Events implements Listener {
     }
 
 
-    List<Material> otherbannedItems = Arrays.asList(Material.ITEM_FRAME, Material.GLOW_ITEM_FRAME, Material.ARMOR_STAND, Material.DRAGON_HEAD, Material.PLAYER_HEAD, Material.ZOMBIE_HEAD, Material.CREEPER_HEAD, Material.SKELETON_SKULL, Material.WITHER_SKELETON_SKULL, Material.MINECART, Material.OAK_BOAT, Material.CHEST_MINECART, Material.FURNACE_MINECART, Material.TNT_MINECART, Material.HOPPER_MINECART, Material.SPRUCE_BOAT, Material.BIRCH_BOAT, Material.JUNGLE_BOAT, Material.ACACIA_BOAT, Material.DARK_OAK_BOAT, Material.END_CRYSTAL, Material.FLINT_AND_STEEL);
+    List<Material> otherbannedItems = Arrays.asList(Material.ARMOR_STAND, Material.DRAGON_HEAD, Material.PLAYER_HEAD, Material.ZOMBIE_HEAD, Material.CREEPER_HEAD, Material.SKELETON_SKULL, Material.WITHER_SKELETON_SKULL, Material.MINECART, Material.OAK_BOAT, Material.CHEST_MINECART, Material.FURNACE_MINECART, Material.TNT_MINECART, Material.HOPPER_MINECART, Material.SPRUCE_BOAT, Material.BIRCH_BOAT, Material.JUNGLE_BOAT, Material.ACACIA_BOAT, Material.DARK_OAK_BOAT, Material.END_CRYSTAL, Material.FLINT_AND_STEEL);
 
     @EventHandler
     public void OnInteract(@NotNull PlayerInteractEvent event) {
