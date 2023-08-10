@@ -9,11 +9,10 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.jetbrains.annotations.NotNull;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
-
-import static com.lemonjoey.placementblocker.Main.plugin;
 
 public class Events implements Listener {
 
@@ -63,6 +62,7 @@ public class Events implements Listener {
         if (!event.getAction().isRightClick()) return;
         if (!placer.getWorld().getName().equals("event")) return;
         if (event.getPlayer().hasPermission("placementblocker.bypass")) return;
+        if (event.getItem() == null) return;
         if (otherbannedItems.contains(Objects.requireNonNull(event.getItem()).getType())){
             event.setCancelled(true);
             boolean isConsonant = true;
